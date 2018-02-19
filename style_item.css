@@ -7,6 +7,9 @@ body {
     margin: 0;
 }
 
+.search_box{
+    background-color: #eee;
+}
 
 .container {
     width: 90%;
@@ -19,7 +22,7 @@ body {
     height: 190;
     background-repeat: round;
     background-size: contain;
-    
+
 }
 
 .footer {
