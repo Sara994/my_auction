@@ -12,14 +12,13 @@ body {
 }
 
 .container {
-    width: 90%;
-    margin-left: 70;
+    width: 100%;
 }
 
 .header {
-    background-image: url("/Applications/XAMPP/xamppfiles/htdocs/my_auction/my_auction/img/back.png");
+    background-image: url("../img/back.png");
     width: 100%;
-    height: 190;
+    
     background-repeat: round;
     background-size: contain;
 
@@ -58,6 +57,18 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.dropdown-content ul {
+    list-style: none;
+}
+.dropdown-content ul li {
+    float: none;
+    cursor: pointer;
+}
+.dropdown-content ul li :hover{
+    background-color: red;
+    
+}
+
 .menu_list li {
     float: right;
 }
@@ -65,7 +76,7 @@ body {
 .menu_list li a {
     color:  #d1d1e0;
     text-align: center;
-    padding: 14px 16px;
+    padding: 7px 16px;
     text-decoration: none;
     display: block;
 }
@@ -170,4 +181,160 @@ i.fa.fa-heart-o:hover{
 }
 hr {
     color: rgba(241, 240, 240, 0.64);
+}
+body {
+    direction: rtl;
+}
+
+#meta {
+    display: block;
+    float: right;
+    padding: 41px 0 0 0;
+}
+
+#meta li {
+    display: block;
+    float: left;
+    padding: 0 20px 0 0;
+}
+
+#meta a {
+    display: block;
+    float: left;
+    font-family: Arial;
+    font-size: 11px;
+    color: red;
+    text-decoration: none;
+    padding: 0 0 0 15px;
+    background-position: 0px 2px;
+    background-repeat: no-repeat;
+}
+
+.meta1 {
+    background-image: url(images/meta1.gif)
+}
+
+.meta2 {
+    background-image: url(images/meta2.gif)
+}
+
+.meta3 {
+    background-image: url(/Applications/XAMPP/xamppfiles/htdocs/my_auction/my_auction/img/nnn.png)
+}
+
+.dropbtn {
+    background-color: #b30000;
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    margin: 0 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: wight;
+}
+
+.dropdown-container {
+    display: flex;
+}
+
+.navbar {
+    box-shadow: 0px 0px 10px 0px #999;
+    display: flex;
+}
+
+.dropdown button:hover {
+    color: #b30000;
+    background-color: #ccc;
+}
+.carousel img{
+    height:50vh;
+    width:auto;
+}
+.boot .carousel-item.active{
+    display:flex;
+    justify-content: center;
+}
+.furniture{
+    padding:20px 0;
+}
+.furniture_item{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-height: 200px;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 0.9em;
+    direction: rtl;
+}
+
+footer {
+    padding: 10px;
+    color: white;
+    background-color: #b30000;
+    text-align:center;
+}
+
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 5px;
+}
+
+.menu_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #b30000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.register_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register_form div {
+    width: 200px;
+}
+
+.register_form div input {
+    width: 100%;
 }
