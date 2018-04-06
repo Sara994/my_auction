@@ -1,4 +1,4 @@
-<!Doctype html>
+<!doctype html>
 
 <head>
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
@@ -12,70 +12,7 @@
     <link rel="stylesheet" href="css/boot.css" />
     <link rel="stylesheet" type="text/css" href="style_item.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title> ZAD</title>
-
-<!-- my menu -->
-<link rel="stylesheet"  href="font-awesome.css">
-    <style type="text/css">
-    body{
-    padding: 0;
-    margin: 0; }
-
-    .my_menu ul{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    } 
-    .my_menu ul li{
-        padding: 15px;
-        position: relative;
-        width: 200px;
-        vertical-align: middle;
-        background-color: #B6B1B1;
-        cursor: pointer;
-        border-top: 1px solid #6B6B6B;
-        -webkit - transition: all 0.3s;
-        -o- transition: all 0.3s;
-        transition: all 0.3s;
-    }
-    .my_menu ul li:hover{
-        background-color: #6F6F6F;
-    }
-.my_menu > ul > li{
-    border-right: 5px solid #000101;
-}
-    .my_menu ul ul{ 
-        transition: all 0.3s;
-        opacity: 0;
-        position: absolute;
-        border-right:  5px solid #000101;
-        visibility: hidden;
-        right: 90%;
-        top:-2%;
-    
-
-
-    }
-    .my_menu ul li:hover > ul{
-        opacity: 1;
-        visibility: visible;
-    }
-    .my_menu ul li a{
-        color: #fff;
-        text-decoration: none;
-    }
-    span {
-        margin-right: 15PX;
-    }
-    .my_menu >: ul > li: nth-of-type(2)::afrer{
-        content: "+";
-        position: absolute;
-        margin-right: 35% ;
-        color: #fff;
-        font-size: 20px;
-    }
-
-</style>
+    <title> ZAD </title>
 </head>
 
 <body>
@@ -134,23 +71,27 @@
                     <div class="header">
                         <div class="menu">
                             <ul class="menu_list">
-                          
-                              <li>
-                                   <a class="active" href="Zad_follow.html"> <span class ="fa fa-home"></span> الرئيسية </a> </li>
-                                     <li>
-                                    <a href="Zad_follow.html">متابعاتي </a></li>
+                 
+                     <li>
+                                    <a class="active" href="Zad_follow.php">متابعاتي </a>
+                                </li>
                                     <li>
-                                    <a class="active" href="Zad_new.html">جديد اليوم </a></li>
+                                    <a class="active" href="Zad_new.php">جديد اليوم </a>
+                                </li>
 
-                                  <li>
-                                    <a href="Zad_End.html">ستنتهي اليوم </a></li>
+                                <li>
+                                    <a href="Zad_End.php">ستنتهي اليوم </a>
+                                </li>
                             
                                   <li>
-                                    <a href="Zad_chance.html"> الفرصة الاخيرة</a></li>
+                                    <a href="Zad_chance.php"> الفرصة الاخيرة</a>
+                                </li>
                                  <li>
-                                    <a href="Zad_BuyNow.html">اشتر الآن</a></li>
+                                    <a href="Zad_BuyNow.php">اشتر الآن</a>
+                                </li>
                                  <li>
-                                    <a href="Most_Bid.html">الاكثر مزايدة</a></li>
+                                    <a href="Most_Bid.php">الاكثر مزايدة</a>
+                                </li>
 
                             </ul>
 
@@ -159,33 +100,20 @@
                 </div>
             </div>
         </div>
-    </nav>   
-<!-- my_menu -->
- <form >
-     <div class="my_menu">
-         <ul>
+    </nav>   <!-- -->
+<article>
+    <center>
+        <aside>
+        <h1>اشتر الآن</h1>
+     </aside>
+    
+</center>
 
-                <li><a href="#"><span class ="fa fa-user"></span> معلومات الشخصية</a></li>  
-
-                <ul>
-                  <li><a href="#"><style class="fa fa-plus"></style>اضافة منتج </a></li>  
-                  <li><a href="#"><style class="fa fa-edit"></style> تعديل منتج </a></li> 
-                  <li><a href="#"><style class="fa fa-remove"></style> حذف منتج </a></li> 
-                </ul>
-
-
-                 <li><a href="#"><span class="fas fa-gavel"></span>مزايداتي</a></li>  
-                 <li><a href="#"> <span class ="fa cart-plus"></span> مشترياتي</a></li>
-                 <li><a href="#"><span class ="fa fa-users"></span> تقيماتي</a></li>   
-          </ul>  
-     </div>
-  </form>
-
-  
 
      <footer>
             <p>&copy; 
             2018 زاد. جميع الحقوق محفوظة.</p>
           </footer>
 </body>
+
 </html>

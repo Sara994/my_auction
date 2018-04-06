@@ -401,3 +401,63 @@
   padding-bottom: 20px;
   color: #fff;
   text-align: center; }
+
+
+
+  .fav_star{
+    filter:grayscale(100%);
+    max-height: 20px;
+    cursor: pointer;
+}
+.fav_star:hover{
+    filter: none;
+}
+.bid_btn{
+    font-size:1.5rem;
+    font-weight: 900;
+    border-radius: 4px;
+    padding:10px 20px;
+    cursor: pointer;
+}
+.bid_btn:hover{
+    background-color:#ccc;
+}
+.more_products{
+    display: flex;
+}
+.more_products div{
+    padding:10px;
+    cursor: pointer;
+    flex:1; 
+    border-radius: 5px;
+}
+.more_products div:hover{
+    box-shadow: 1px 1px 1px 1px #bbb;
+}
+.submit_bid{
+    display:flex;
+    justify-content:left;
+}
+ .submit_buy{
+    display:flex;
+    justify-content:center;
+}
+.submit_bid *{
+    margin: 3px 3px;
+}
+ 
+.submit_buy *{
+    margin: 5px 5px;
+}
+
+ input[type="text1"],
+input[type="bid"] {
+    width: 70px;
+    height: 20px;
+    font-size: 15px;
+    float: center;
+    margin-left: 5px;
+    border-color: red;
+    border-style: dashed;
+    padding-top: 7px;
+}

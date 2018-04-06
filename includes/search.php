@@ -1,7 +1,7 @@
 <?php
-require("zad_DB.php");
+require_once("zad_DB.php");
 
-function getAllItems(){
+function search(){
     $db = connectToDb();
     $query = "Select Title from item";
     $result = mysqli_query($db,$query);

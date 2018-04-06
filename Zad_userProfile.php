@@ -34,7 +34,7 @@
         background-color: #B6B1B1;
         cursor: pointer;
         border-top: 1px solid #6B6B6B;
-        -webkit- transition: all 0.3s;
+        -webkit - transition: all 0.3s;
         -o- transition: all 0.3s;
         transition: all 0.3s;
     }
@@ -50,7 +50,7 @@
         position: absolute;
         border-right:  5px solid #000101;
         visibility: hidden;
-       right: 90%;
+        right: 90%;
         top:-2%;
     
 
@@ -110,7 +110,7 @@
             </div>
 
             <div style="flex:1" class="dropdown">
-                <button class="dropbtn" style="margin:0px;border-left:solid; border-right-color:#b30000; border-width: thin; border-color:black">الاقسام </button>
+                <button class="dropbtn" style="margin:0px;border-left:solid; border-right-color:#b30000; border-width: thin; border-color:black">طريقة </button>
                 <div class="dropdown-content">
                     <ul>
                         <li>1</li>
@@ -136,21 +136,21 @@
                             <ul class="menu_list">
                           
                               <li>
-                                   <a class="active" href="Zad_follow.html"> <span class ="fa fa-home"></span> الرئيسية </a> </li>
+                                   <a class="active" href="Zad_follow.php"> <span class ="fa fa-home"></span> الرئيسية </a> </li>
                                      <li>
-                                    <a href="Zad_follow.html">متابعاتي </a></li>
+                                    <a href="Zad_follow.php">متابعاتي </a></li>
                                     <li>
-                                    <a class="active" href="Zad_new.html">جديد اليوم </a></li>
+                                    <a class="active" href="Zad_new.php">جديد اليوم </a></li>
 
                                   <li>
-                                    <a href="Zad_End.html">ستنتهي اليوم </a></li>
+                                    <a href="Zad_End.php">ستنتهي اليوم </a></li>
                             
                                   <li>
-                                    <a href="Zad_chance.html"> الفرصة الاخيرة</a></li>
+                                    <a href="Zad_chance.php"> الفرصة الاخيرة</a></li>
                                  <li>
-                                    <a href="Zad_BuyNow.html">اشتر الآن</a></li>
+                                    <a href="Zad_BuyNow.php">اشتر الآن</a></li>
                                  <li>
-                                    <a href="Most_Bid.html">الاكثر مزايدة</a></li>
+                                    <a href="Most_Bid.php">الاكثر مزايدة</a></li>
 
                             </ul>
 
@@ -165,7 +165,7 @@
      <div class="my_menu">
          <ul>
 
-                <li><a href="#"><span class ="fa fa-user"></span> معلوماتي الشخصية</a></li>  
+                <li><a href="#"><span class ="fa fa-user"></span> معلومات الشخصية</a></li>  
 
                 <ul>
                   <li><a href="#"><style class="fa fa-plus"></style>اضافة منتج </a></li>  
@@ -181,116 +181,7 @@
      </div>
   </form>
 
-  <?php
-	// Create database connection
-	require ("zad_DB.php");
-  $db = connectToDb();
-
-	
-  // Initialize message variable
-  $msg = "";
-
-  // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
-  	// Get image name
-  	$image = $_FILES['image']['name'];
-  	// Get text
-		$Description = mysqli_real_escape_string($db, $_POST['Description']);
-		$title = mysqli_real_escape_string($db, $_POST['title']);
-
-  	// image file directory
-		$target = "/Applications/XAMPP/xamppfiles/htdocs/maram_z/images/".basename($image);
-		
-		$images = [];
-		$images[0] = "/maram_z/images/".basename($image);
-		$images_json = json_encode($images);
-
-
-  	$sql = "INSERT INTO `item` (`ID_item`, `Description`, `Item_name`, `Title`, `Price`, `Status`, `Shipping_method`, `id_auction`, `photos`)
-		 VALUES ('', '$Description','$title','$title',10,'sold','no shipping','201801','$images_json')";
-  	// execute query
-  	mysqli_query($db, $sql);
-
-  	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-  		$msg = "Image uploaded successfully";
-  	}else{
-  		$msg = "Failed to upload image";
-  	}
-  }
-  $result = mysqli_query($db, "SELECT * FROM item");
-?>
-
-	<meta charset="utf8" />
-<title>Image Upload</title>
-<style type="text/css">
-   #content{
-   	width: 50%;
-   	margin: 20px auto;
-   	border: 1px solid #cbcbcb;
-   }
-   form{
-   	width: 50%;
-   	margin: 20px auto;
-   }
-   form div{
-   	margin-top: 5px;
-   }
-   #img_div{
-   	width: 80%;
-   	padding: 5px;
-   	margin: 15px auto;
-   	border: 1px solid #cbcbcb;
-   }
-   #img_div:after{
-   	content: "";
-   	display: block;
-   	clear: both;
-   }
-   img{
-   	float: left;
-   	margin: 5px;
-   	width: 300px;
-   	height: 140px;
-   }
-</style>
-</head>
-<body>
-<div id="content">
-  <?php
-    while ($row = mysqli_fetch_array($result)) {
-			echo "<div id='img_div'>";
-			
-			$image_list = json_decode($row['photos'],true);
-			foreach($image_list AS $img){
-				echo "<img src='http://localhost".$img."' >";
-			}
-			echo "<p>".$row['Description']."</p>";
-			echo "<p>".$row['Item_name']."</p>";
-
-      echo "</div>";
-    }
-  ?>
-  <form method="POST" enctype="multipart/form-data">
-  	<input type="hidden" name="size" value="1000000">
-  	<div>
-  	  <input type="file" name="image">
-		</div>
-		<div><input type="text" name="title" />
-  	<div>
-      <textarea 
-      	id="text" 
-      	cols="40" 
-      	rows="4" 
-      	name="Description" 
-      	placeholder="اكتب الوصف"></textarea>
-  	</div>
-  	<div>
-  		<button type="submit" name="upload">POST</button>
-  	</div>
-  </form>
-</div>
-</body>
-</html>
+  
 
      <footer>
             <p>&copy; 

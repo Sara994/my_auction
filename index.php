@@ -1,75 +1,76 @@
-<?php
-require('Zad_DB.php');
-  // Create database connection
-  $db = connectToDb();
+<?php require('header.php') ?>
 
-  // Initialize message variable
-  $msg = "";
+    <section class="boot" style="background-color:rgb(203, 134, 134)">
+        <div  id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div  class="carousel-inner">  <!-- photo slider  style="width:30%" -->
+                
+                <div class="carousel-item active" href ="Zad_details.php"> 
+                    <img class="d-block" src="img/lab.jpg" alt="First slide">
+                           
+                    <div style="margin:0 10px">
+                            <div>لابتوب</div>
+                            <button class="btn btn-default" >اشتر الآن</button>
+                        </div>
+                </div>
+                <div class="carousel-item" href ="Zad_details.php"> 
+                    <img class="d-block" src="img/bag.jpg" alt="Second slide">
+                                        
+                    <div style="margin:0 10px">
+                            <div>حقيبة</div>
+                            <button class="btn btn-default" >اشتر الآن</button>
+                        </div>
+                </div>
+                <div class="carousel-item" href ="Zad_details.php"> 
+                    <img class="d-block" src="img/k.png" alt="Third slide">
+                    
+                    <div style="margin:0 10px">
+                        <div>شنطة</div>
+                        <button class="btn btn-default" >اشتر الآن</button>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+    </section>
+    <section class="furniture">
 
-  // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
-   // Get image name
-   $image = $_FILES['image']['name'];
-   $image_parts = explode('.',$image);
+        <h3 style="padding-right:2%">أثاث</h3>
+        <div style="display:flex;justify-content:space-around">
+            <div class="furniture_item">
+                <img src="/Users/m_aram8/Desktop/my_auction-master 2/img/th.jpg" height="100" style=" margin:10px 10px 0px 20px">
+            </div>
 
-   $image = "";
-   $i = 0;
-   for($i = 0;$i<sizeof($image_parts)-1;$i++){
-    $image .= $image_parts[$i];
-   }
-   $image .= time() . "." . $image_parts[sizeof($image_parts)-1];
-
-   // Get text
-   $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
-
-   // image file directory
-   $target = "images/".basename($image);
-
-   $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
-   // execute query
-   mysqli_query($db, $sql);
-
-   if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-      $msg = "Image uploaded successfully";
-   }else{
-      $msg = "Failed to upload image";
-   }
-  }
-  $result = mysqli_query($db, "SELECT * FROM images");
-?>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Image Upload</title>
-<style type="text/css"></style>
-</head>
-<body>
-<div id="content">
-  <?php
-    while ($row = mysqli_fetch_array($result)) {
-      echo "<div id='img_div'>";
-         echo "<img src='images/".$row['image']."' >";
-         echo "<p>".$row['image_text']."</p>";
-      echo "</div>";
-    }
-  ?>
-  <form method="POST" action="index.php" enctype="multipart/form-data">
-   <input type="hidden" name="size" value="1000000">
-   <div>
-     <input type="file" name="image">
-   </div>
-   <div>
-      <textarea 
-         id="text" 
-         cols="40" 
-         rows="4" 
-         name="image_text" 
-         placeholder="Say something about this image..."></textarea>
-   </div>
-   <div>
-      <button type="submit" name="upload">POST</button>
-   </div>
-  </form>
-</div>
+            <div class="furniture_item">
+                <img src="img/k.png" height="100" style="margin:10px 10px 0px 20px">
+            </div>
+            <div class="furniture_item">
+                <img src="/Users/m_aram8/Desktop/my_auction-master 2/img/tt.jpg" height="100" style="margin:10px 10px 0px 20px">
+            </div>
+   <div class="furniture_item">
+                <img src="/Users/m_aram8/Desktop/my_auction-master 2/img/knb.jpg" height="100" style="margin:10px 10px 0px 20px">
+            </div>
+               <div class="furniture_item">
+                <img src="/Users/m_aram8/Desktop/my_auction-master 2/img/abj.jpg" height="100" style="margin:10px 10px 0px 20px">
+            </div>
+        </div>
+    </section>
+    <script>$('.carousel').carousel()</script>
+    <footer>
+            <p>&copy; 2018 زاد. جميع الحقوق محفوظة.</p>
+          </footer>
 </body>
+
 </html>

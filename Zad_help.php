@@ -47,7 +47,7 @@
             </div>
 
             <div style="flex:1" class="dropdown">
-                <button class="dropbtn" style="margin:0px;border-left:solid; border-right-color:#b30000; border-width: thin; border-color:black">طريقة </button>
+                <button class="dropbtn" style="margin:0px;border-left:solid; border-right-color:#b30000; border-width: thin; border-color:black">الاقسام </button>
                 <div class="dropdown-content">
                     <ul>
                         <li>1</li>
@@ -71,31 +71,30 @@
                     <div class="header">
                         <div class="menu">
                             <ul class="menu_list">
-                          
-                              <li>
-                                    <a class="active" href="Zad_follow.html">متابعاتي </a>
+                             
+
+                               <li>
+                                    <a class="active" href="Zad_follow.php">متابعاتي </a>
                                 </li>
                                     <li>
-                                    <a class="active" href="Zad_new.html">جديد اليوم </a>
+                                    <a class="active" href="Zad_new.php">جديد اليوم </a>
                                 </li>
 
                                 <li>
-                                    <a href="Zad_End.html">ستنتهي اليوم </a>
+                                    <a href="Zad_End.php">ستنتهي اليوم </a>
                                 </li>
                             
                                   <li>
-                                    <a href="Zad_chance.html"> الفرصة الاخيرة</a>
+                                    <a href="Zad_chance.php"> الفرصة الاخيرة</a>
                                 </li>
                                  <li>
-                                    <a href="Zad_BuyNow.html">اشتر الآن</a>
+                                    <a href="Zad_BuyNow.php">اشتر الآن</a>
                                 </li>
                                  <li>
-                                    <a href="Most_Bid.html">الاكثر مزايدة</a>
+                                    <a href="Most_Bid.php">الاكثر مزايدة</a>
                                 </li>
-
-                              
-
-                            </ul>
+                               </ul>
+                               
 
                         </div>
                     </div>
@@ -106,7 +105,7 @@
 <article>
     <center>
         <aside>
-        <h1>متابعاتي</h1>
+        <h1>الاسئلة الاكثر شيوعاً</h1>
      </aside>
     
 </center>

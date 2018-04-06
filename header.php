@@ -1,16 +1,24 @@
 <!doctype html>
 
 <head>
+    <meta charset="utf8">
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
-    
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 
     <link rel="stylesheet" href="css/boot.css" />
     <link rel="stylesheet" type="text/css" href="style_item.css">
+    <script src="js/script.js" ></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title> ZAD </title>
 </head>
@@ -23,13 +31,14 @@
 
         <h2 style="flex:1; align-self:center"> زاد+ </h2>
 
-        <a style="align-self: center;padding:0 20px"> تسجيل دخول</a>
-        <a style="align-self: center;padding:0 20px">مساعدة</a>
+        <a style="align-self: center;padding:0 20px" href="zad_login.php"> تسجيل دخول</a>
+        <a style="align-self: center;padding:0 20px" href="Zad_help.php" >مساعدة
+        </a>
     </header>
 
-    <nav class="menu_list" style="margin-bottom:10px;display:flex">
+    <nav class="menu_list" style="margin-bottom:10px;display:flex;overflow:visible;position:relative">
         <div style="flex:2;justify-content:center;display:flex;">
-            <input type="text" placeholder="ابحث عن" style="width:90%;line-height:2;align-self:center">
+            <input id="search" type="text" placeholder="ابحث عن" style="width:90%;line-height:2;align-self:center">
         </div>
 
 
@@ -47,7 +56,7 @@
             </div>
 
             <div style="flex:1" class="dropdown">
-                <button class="dropbtn" style="margin:0px;border-left:solid; border-right-color:#b30000; border-width: thin; border-color:black">طريقة </button>
+                <button class="dropbtn" style="margin:0px;border-left:solid; border-right-color:#b30000; border-width: thin; border-color:black">الأقسام</button>
                 <div class="dropdown-content">
                     <ul>
                         <li>1</li>
@@ -71,28 +80,27 @@
                     <div class="header">
                         <div class="menu">
                             <ul class="menu_list">
-                            <li>
-                                    <a class="active" href="Zad_follow.html">متابعاتي </a>
+                             
+                                 <li>
+                                    <a class="active" href="Zad_follow.php">متابعاتي </a>
                                 </li>
                                     <li>
-                                    <a class="active" href="Zad_new.html">جديد اليوم </a>
+                                    <a class="active" href="Zad_new.php">جديد اليوم </a>
                                 </li>
 
                                 <li>
-                                    <a href="Zad_End.html">ستنتهي اليوم </a>
+                                    <a href="Zad_End.php">ستنتهي اليوم </a>
                                 </li>
                             
                                   <li>
-                                    <a href="Zad_chance.html"> الفرصة الاخيرة</a>
+                                    <a href="Zad_chance.php"> الفرصة الاخيرة</a>
                                 </li>
                                  <li>
-                                    <a href="Zad_BuyNow.html">اشتر الآن</a>
+                                    <a href="Zad_BuyNow.php">اشتر الآن</a>
                                 </li>
                                  <li>
-                                    <a href="Most_Bid.html">الاكثر مزايدة</a>
+                                    <a href="Most_Bid.php">الاكثر مزايدة</a>
                                 </li>
-                              
-
                             </ul>
 
                         </div>
@@ -100,20 +108,20 @@
                 </div>
             </div>
         </div>
-    </nav>   <!-- -->
-<article>
-    <center>
-        <aside>
-        <h1>الاكثر مزايدة</h1>
-     </aside>
-    
-</center>
+    </nav>  
 
+    <script>
+        
+        <?php
 
-     <footer>
-            <p>&copy; 
-            2018 زاد. جميع الحقوق محفوظة.</p>
-          </footer>
-</body>
+        require("includes/search.php");
+        echo ("var items = " . json_encode(search()));
 
-</html>
+        ?>
+
+        items = items.map(i=>i.Title);
+        // ---------------------------- DB
+        $(function(){
+            autocomplete(document.getElementById("search"), items);
+        });         
+    </script>

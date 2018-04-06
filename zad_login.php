@@ -150,7 +150,7 @@
                 <br> 
                 </div>      
           
-           <button type="reset" onclick="location.href='zad_home.html'" >دخول </button> 
+           <button type="reset" onclick="location.href='zad_home.php'" >دخول </button> 
            <br>
             </div>
 
@@ -161,7 +161,7 @@
    <br>
             <div class="signup">
                 ليس لديك حساب؟
-                <a href="zad_sign.html">تسجيل مستخدم </a>
+                <a href="zad_sign.php">تسجيل مستخدم </a>
             </div> 
      </center>
 

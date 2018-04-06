@@ -24,24 +24,24 @@
     <div class="menu">
       <ul class="menu_list">
                               <li>
-                                    <a class="active" href="Zad_follow.html">متابعاتي </a>
+                                    <a class="active" href="Zad_follow.php">متابعاتي </a>
                                 </li>
                                     <li>
-                                    <a class="active" href="Zad_new.html">جديد اليوم </a>
+                                    <a class="active" href="Zad_new.php">جديد اليوم </a>
                                 </li>
 
                                 <li>
-                                    <a href="Zad_End.html">ستنتهي اليوم </a>
+                                    <a href="Zad_End.php">ستنتهي اليوم </a>
                                 </li>
                             
                                   <li>
-                                    <a href="Zad_chance.html"> الفرصة الاخيرة</a>
+                                    <a href="Zad_chance.php"> الفرصة الاخيرة</a>
                                 </li>
                                  <li>
-                                    <a href="Zad_BuyNow.html">اشتر الآن</a>
+                                    <a href="Zad_BuyNow.php">اشتر الآن</a>
                                 </li>
                                  <li>
-                                    <a href="Most_Bid.html">الاكثر مزايدة</a>
+                                    <a href="Most_Bid.php">الاكثر مزايدة</a>
                                 </li>
 
                             </ul>
