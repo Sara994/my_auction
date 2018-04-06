@@ -1,6 +1,7 @@
 <?php
+require('Zad_DB.php');
   // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "image_upload");
+  $db = connectToDb();
 
   // Initialize message variable
   $msg = "";
@@ -9,6 +10,15 @@
   if (isset($_POST['upload'])) {
    // Get image name
    $image = $_FILES['image']['name'];
+   $image_parts = explode('.',$image);
+
+   $image = "";
+   $i = 0;
+   for($i = 0;$i<sizeof($image_parts)-1;$i++){
+    $image .= $image_parts[$i];
+   }
+   $image .= time() . "." . $image_parts[sizeof($image_parts)-1];
+
    // Get text
    $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
 
