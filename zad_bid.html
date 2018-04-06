@@ -1,0 +1,238 @@
+<!-- <!DOCTYPE html> -->
+<html>
+
+<head>
+    <title>zad items</title>
+    <link rel="stylesheet" type="text/css" href="style_item.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'>
+    <link href="css/boot.css" rel="stylesheet" />
+    <link ref="stylesheet" href="style_item.css">
+    <style>
+        .fav_star{
+            filter:grayscale(100%);
+            max-height: 20px;
+            cursor: pointer;
+        }
+        .fav_star:hover{
+            filter: none;
+        }
+        .bid_btn{
+            font-size:1.5rem;
+            font-weight: 900;
+            border-radius: 4px;
+            padding:10px 20px;
+            cursor: pointer;
+        }
+        .bid_btn:hover{
+            background-color:#ccc;
+        }
+        .more_products{
+            display: flex;
+        }
+        .more_products div{
+            padding:10px;
+            cursor: pointer;
+            flex:1; 
+            border-radius: 5px;
+        }
+        .more_products div:hover{
+            box-shadow: 1px 1px 1px 1px #bbb;
+        }
+        .submit_bid{
+            display:flex;
+            justify-content:left;
+        }
+         .submit_buy{
+            display:flex;
+            justify-content:center;
+        }
+        .submit_bid *{
+            margin: 3px 3px;
+        }
+         
+        .submit_buy *{
+            margin: 5px 5px;
+        }
+
+         input[type="text1"],
+        input[type="bid"] {
+            width: 70px;
+            height: 20px;
+            font-size: 15px;
+            float: center;
+            margin-left: : 5px;
+            border-color: red;
+            border-style: dashed;
+            padding-top: 7px;
+
+    </style>
+</head>
+
+<body >
+   <header class="navbar" style="max-height:15vh">
+
+        <div style="display:flex; margin:0 5px">
+            <img src="img/logo.png" alt="HTML5 Icon" style="max-height: 10vh;align-self:center">
+        </div>
+
+
+        <h2 style="flex:1; align-self:center"> زاد+ </h2>
+        <a style="align-self: center;padding:0 20px"> تسجيل دخول</a>
+        <a style="align-self: center;padding:0 20px">مساعدة</a>
+    </header>
+
+    <nav class="menu_list" style="margin-bottom:10px;display:flex">
+        <div style="flex:2;justify-content:center;display:flex;">
+            <input type="text" placeholder="ابحث عن" style="width:90%;line-height:2;align-self:center">
+        </div>
+
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <button class="dropbtn" style="margin:0px;border-left:solid; border-right:solid; border-width: thin; border-color:black">المدن</button>
+                <div class="dropdown-content">
+                    <h>جدة</h>
+                    <br>
+                    <h>الرياض</h>
+                    <br>
+                    <h>الدمام</h>
+                    <br>
+                </div>
+            </div>
+
+            <div style="flex:1" class="dropdown">
+                <button class="dropbtn" style="margin:0px;border-left:solid; border-right-color:#b30000; border-width: thin; border-color:black">الأقسام </button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="align-self:center;margin-right:15px;"> 
+            <button>ابحث</button>
+        </div>
+
+        <div style="Flex:3"></div>
+    </nav>
+
+    <nav>
+        <div id="wrap">
+            <div id="nheader">
+                <div>
+                    <div class="header">
+                        <div class="menu">
+                            <ul class="menu_list">
+                          
+                              <li>
+                                    <a class="active" href="Zad_follow.html">متابعاتي </a>
+                                </li>
+                                    <li>
+                                    <a class="active" href="Zad_new.html">جديد اليوم </a>
+                                </li>
+
+                                <li>
+                                    <a href="Zad_End.html">ستنتهي اليوم </a>
+                                </li>
+                            
+                                  <li>
+                                    <a href="Zad_chance.html"> الفرصة الاخيرة</a>
+                                </li>
+                                 <li>
+                                    <a href="Zad_BuyNow.html">اشتر الآن</a>
+                                </li>
+                                 <li>
+                                    <a href="Most_Bid.html">الاكثر مزايدة</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>   <!-- -->
+    </nav>
+        <div style="display: flex">
+            <div style="flex:5;border:1px solid #F01010;border-radius:10px;margin:5px;padding:10px">
+                <div style="display:flex">
+                    <div style="flex:1;padding:10px">
+                        <div>
+                            <img style="width:100%" src="img/dell.png" />
+                        </div>
+                        <div class="more_products">
+                            <div><img style="max-width:100%" src="img/xps13-1.png" /></div>
+                            <div><img style="max-width:100%" src="img/xps13-2.png" /></div>
+                            <div><img style="max-width:100%" src="img/dell.png" /></div>
+                        </div>
+                    </div>
+                    <div style="flex:3;display:flex;flex-direction:column;justify-content:space-between">
+                        <div style="align-self:flex-end;margin:20px">
+                            
+                            <h3>البائع: <a href="#">ِAhmad201</a> </h3>
+                            <div style="width:20%"><img style="max-width: 100%" src="img/rating.jpeg"></div>
+                        </div>
+                         
+                        <div>
+                            <span style="font-weight:900;font-size:2rem">لابتوب لينوفا</span>
+
+
+                             <div style="font-size:1.5rem">
+                            لاب توب مستعمل, استعمال قليل, نظيف وبحالة جيدة
+                        </div>
+                            <span><img class="fav_star" src="img/like.png"></span>
+                            <span>أضف إلى المفضلة</span>
+                            
+                        </div>
+                           <h>رقم السلعة: 201801 </h>
+                           <h> الأقسام: الالكترونيات</h>
+                        
+                        <form >
+                            
+ 
+                            <h>حالة السلعة: مسعتمله </h>
+                            <p>الوقت المتبقي: 1:09:59:00</p> <time datetime="YYYY-MM-DDThh:mm:ssTZD"> 
+                            <h>السعر : ٨٥٠ ريال</h>
+                   
+                    <button  class="bid_btn">زايد </button>
+               
+                          <h4>المزايدة التلقائية: </p4>
+                          <h> مقدار المزايدة</h>
+                          <input  type="text1" name="bid" placeholder="">
+
+
+                          <h>الحد الاقصى</h>
+                          <input  type="text1" name="bid" placeholder="">
+                         
+                          <button class="bid_btn">تنفيذ </button>
+                   </form>
+
+                    </div>
+                </div>
+
+               <hr> 
+                <div class="submit_buy">
+                     <h>اشتر الآن</h>
+                    <button class="bid_btn">٦٠٠ س.ر</button>
+                </div>
+              
+                   <p> طريقه الدفع : عند الاستلام</p>
+                   <p> طريقه التوصيل : خدمة ارسلني</p>
+
+            </div>
+            <div style="flex:1">
+                <img style="max-width:100%" src="img/aid2.png">
+                <img style="max-width:100%" src="img/aid1.png">
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2018 زاد. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+
+</html>
