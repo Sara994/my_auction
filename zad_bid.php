@@ -36,27 +36,31 @@
                             <span>أضف إلى المفضلة</span>
                             
                         </div>
-                           <h>رقم السلعة: 201801 </h>
-                           <h> الأقسام: الالكترونيات</h>
-                        
+                          <div> 
+                          <h>رقم السلعة:</h><span style="font-size:1.5rem"><?php print $auction ['id_auction'] ?></span>
+                          </div>
+                          <h>الأقسام:</h><span style="font-size:1.5rem">
+                              <?php foreach( $auction['categories'] as $cat ) 
+                                print "<span class='category'>$cat</span>";
+                               ?>
+                        </span>
+
+                          <h>حالة السلعة:</h><span style="font-size:1.5rem"><?php print $auction ['Status'] ?></span>
+             
+                          <h>السعر :</h><span style="font-size:1.5rem"><?php print $auction ['Price'] ?></span>
+
+                          <h>الوقت المتبقي:</h><span style="font-size:1.5rem"><?php print $auction ['End_time'] ?></span>
+
                         <form>
-                                <h>حالة السلعة: مسعتمله </h>
-                                <p>الوقت المتبقي: 1:09:59:00</p> <time datetime="YYYY-MM-DDThh:mm:ssTZD"> 
-                                <h>السعر : ٨٥٠ ريال</h>
-                        
                                 <button  class="bid_btn">زايد </button>
-                    
                                 <h4>المزايدة التلقائية: </p4>
                                 <h> مقدار المزايدة</h>
                                 <input  type="text1" name="bid" placeholder="">
-
-
                                 <h>الحد الاقصى</h>
                                 <input  type="text1" name="bid" placeholder="">
                                 
                                 <button class="bid_btn">تنفيذ </button>
                         </form>
-
                     </div>
                 </div>
 
