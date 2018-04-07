@@ -1,7 +1,5 @@
-
-
 <?php
-
+require_once('includes/zad_DB.php');
 
 
 $firstname = "";
@@ -12,53 +10,37 @@ $password = "";
 $city = "";
 $postcode = 0;
 
+
 if(isset($_POST["register"])){
 
-$firstname = $_POST["firstname"];
-$lastname = $_POST["lastname"];
-$email = $_POST["email"];
-$user_name = $_POST["user_name"];
-$password = $_POST["password"];
-$city = $_POST["city"];
-$sellerpage = isset($_POST["sellerpage"]) ? 1 : 0;
+    $firstname = $_POST["firstname"];
+    $lastname = $_POST["lastname"];
+    $email = $_POST["email"];
+    $user_name = $_POST["user_name"];
+    $password = $_POST["password"];
+    $city = $_POST["city"];
+    $sellerpage = isset($_POST["sellerpage"]) ? 1 : 0;
 
+	$db = connectToDb();
 
-	$dbname="zad_database";
-
-	$conn = @mysql_connect("localhost","root","");
-
-	if (!$conn) {
-		die('Could not connect to server: ' . mysql_error());
-	}
-
-	$database = @mysql_select_db ($dbname, $conn);
-	if(!$database){
-
-	die('Error Database Connected');
-	}
-
-
-	$sqlSt = "Insert into users (Firstname,Lastname,Username,Password,City,Email,sellerpage) values 
+	$query = "Insert into user (Firstname,Lastname,Username,Password,City,Email,sellerpage) values 
 	('$firstname','$lastname','$user_name','$password','$city','$email',$sellerpage)" ;
-	mysql_query('SET CHARACTER SET utf8');
-	$result = mysql_query($sqlSt ,$conn);
+	$result = mysqli_query($db ,$query);
 	
 
 	if($result == true){
-	   echo '<script>alert("تمت ");</script>';
+        echo '<script>alert("تمت ");</script>';
 	}else
 	{
-		  echo "<script>'ُError'</script>";
+        echo "<script>'ُError'</script>";
 	}
-	
-	
 }
 
 
 
 ?>
 <!DOCTYPE html>
-<html lang=Ar>
+<html lang="ar">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -102,7 +84,7 @@ $sellerpage = isset($_POST["sellerpage"]) ? 1 : 0;
         </nav>
         <br>
         <br>
-        <form action="" class="register_form" method="post" onsubmit="try { var myValidator = validate_signup_register_personal_form; } catch(e) { return true; } return myValidator(this);">
+        <form class="register_form" method="post" onsubmit="try { var myValidator = validate_signup_register_personal_form; } catch(e) { return true; } return myValidator(this);">
 
             <div>
                 <lable for="">

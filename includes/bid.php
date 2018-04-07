@@ -18,9 +18,9 @@ function getAllBidsForAuction($auctionId){
 
 function getHeighestBid($auctionId){
     $db = connectToDb();
-    $auction = getAuctionById($auctionId);
+    //$auction = getAuctionById($auctionId);
 
-    $query = "SELECT max(price) as price ,max_price,id from bid where id_auction = $auctionId";
+    $query = "SELECT price ,max_price,id,ID_user from bid where id_auction = $auctionId order by price desc limit 1";
     $result = mysqli_query($db,$query);
     return mysqli_fetch_assoc($result);
 }
@@ -29,51 +29,43 @@ function addBid($auctionId,$maxPrice){
     $db = connectToDb();
     $auction = getAuctionById($auctionId);
     $heighestBid = getHeighestBid($auction['id_auction']);
-    // price, max_price, id
-    $currentBid;
+
     $min_increment = $auction['min_increment'];
 
-    // startPrice = 800
-    // min_inc = 50
-    // $heighestBid['max_price'] = 1150
-    // price = 900
-    // maxPrice = 1150
     global $userId;
-
-
     
     if(is_null($heighestBid['price'])){
         $currentBid = $auction['Price'];
         $query = "INSERT INTO bid (ID_user,id_auction,price,max_price) VALUES ($userId,$auctionId,$currentBid,$maxPrice)";
         mysqli_query($db,$query);
     }elseif($maxPrice > $heighestBid['price'] ){
-        $old = $heighestBid; // price,max_price,id
-        $new;
-        $winner;
+        $old = $heighestBid; 
+        
+        $currentBid = $old['price'] + $min_increment;
+        $new = [];
+        $new['max_price'] = $maxPrice;
+        $new['price'] = $currentBid;
+        $new['ID_user'] = $userId;
+        $current = $new;
+        $other = $old;
 
         
-        $currentBid = $heighestBid['price'] + $min_increment;
-        $query = "INSERT INTO bid (ID_user,id_auction,price,max_price) VALUES ($userId,$auctionId,$currentBid,$maxPrice)";
-        mysqli_query($db,$query);
-        $new = getHeighestBid($auction['id_auction']);
-        $winner = 1;
-
+        
         while($new['max_price'] > $currentBid  && $old['max_price'] > $currentBid){
-            $current = $winner == 1 ? $new : $old;
-            $other = $winner == 1 ? $old : $new;
-            $currentBid = $current['price'] + $min_increment;
-            $query = "INSERT INTO bid (ID_user,id_auction,price,max_price) VALUES ($userId,$auctionId,$currentBid,$other[max_price])";
-            mysqli_query($db,$query);
-            $other['price'] = $currentBid;
-            if($winner == 1){
-                $new = $other;
-            }else{
-                $old = $current;
-            }
+            $temp = $current;
+            $current = $other;
+            $other = $temp;
             
-            $winner = $winner == 1 ? 2:1;
+            // insert other, update currentBid, 
+            $currentBid = $other['price'];
+            $query = "INSERT INTO bid (ID_user,id_auction,price,max_price) VALUES ($other[ID_user],$auctionId,$currentBid,$other[max_price])";
+            
+            mysqli_query($db,$query);
+            
+            $current['price'] = $other['price'] + $min_increment;
         }
     }
+    return true;
 }
 
 
