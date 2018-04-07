@@ -58,27 +58,22 @@ function addBid($auctionId,$maxPrice){
         $new = getHeighestBid($auction['id_auction']);
         $winner = 1;
 
-        echo $new['max_price'] > $currentBid ;
-        echo $old['max_price'] > $currentBid;
-
         while($new['max_price'] > $currentBid  && $old['max_price'] > $currentBid){
-            $temp = $winner == 1 ? $new :$old;
-            $currentBid = $temp['price'] + $min_increment;
-            $query = "INSERT INTO bid (ID_user,id_auction,price,max_price) VALUES ($userId,$auctionId,$currentBid,$temp[max_price])";
+            $current = $winner == 1 ? $new : $old;
+            $other = $winner == 1 ? $old : $new;
+            $currentBid = $current['price'] + $min_increment;
+            $query = "INSERT INTO bid (ID_user,id_auction,price,max_price) VALUES ($userId,$auctionId,$currentBid,$other[max_price])";
             mysqli_query($db,$query);
-            $temp['price'] = $currentBid;
+            $other['price'] = $currentBid;
             if($winner == 1){
-                $new = $temp;
+                $new = $other;
             }else{
-                $old = $temp;
+                $old = $current;
             }
             
             $winner = $winner == 1 ? 2:1;
         }
     }
-
-
-    
 }
 
 
