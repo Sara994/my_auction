@@ -1,4 +1,6 @@
-<?php require('header.php') ?>
+
+<?php
+require('header.php') ?>
 
     <section class="boot" style="background-color:rgb(203, 134, 134)">
         <div  id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
